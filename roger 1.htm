@@ -1,0 +1,291 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ice="http://ns.adobe.com/incontextediting">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>pagina roger 1.7</title>
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #4E5869;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+	color: #333;
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+	color: #FFCC00;
+}
+
+/* ~~ este contenedor rodea a todas las demás divs, lo que les asigna su anchura basada en porcentaje ~~ */
+.container {
+	width: 80%;
+	max-width: 1260px;/* puede que sea conveniente una anchura máxima (max-width) para evitar que este diseño sea demasiado ancho en un monitor grande. Esto mantiene una longitud de línea más legible. IE6 no respeta esta declaración. */
+	min-width: 780px;/* puede que sea conveniente una anchura mínima (min-width) para evitar que este diseño sea demasiado estrecho. Esto permite que la longitud de línea sea más legible en las columnas laterales. IE6 no respeta esta declaración. */
+	background-color: #FFF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño. No es necesario si establece la anchura de .container en el 100%. */
+}
+
+/* ~~ no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado ~~ */
+.header {
+	background-color: #6F7D94;
+}
+
+/* ~~ Estas son las columnas para el diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de las divs. Los elementos situados dentro de estas divs tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+2) No se asigna margen a las columnas, ya que todas ellas son flotantes. Si es preciso añadir un margen, evite colocarlo en el lado hacia el que se produce la flotación (por ejemplo: un margen derecho en una div configurada para flotar hacia la derecha). En muchas ocasiones, puede usarse relleno como alternativa. En el caso de divs para las que deba incumplirse esta regla, deberá añadir una declaración "display:inline" a la regla de la div para evitar un error que provoca que algunas versiones de Internet Explorer dupliquen el margen.
+
+3) Dado que las clases se pueden usar varias veces en un documento (y que también se pueden aplicar varias clases a un elemento), se ha asignado a las columnas nombres de clases en lugar de ID. Por ejemplo, dos divs de barra lateral podrían apilarse si fuera necesario. Si lo prefiere, éstas pueden cambiarse a ID fácilmente, siempre y cuando las utilice una sola vez por documento.
+
+4) Si prefiere que la navegación esté a la derecha en lugar de a la izquierda, simplemente haga que estas columnas floten en dirección opuesta (todas a la derecha en lugar de todas a la izquierda) y éstas se representarán en orden inverso. No es necesario mover las divs por el código fuente HTML.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 20%;
+	background-color: #93A5C4;
+	padding-bottom: 10px;
+}
+.content {
+	padding: 10px 0;
+	width: 80%;
+	float: left;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ Los estilos de lista de navegación (pueden eliminarse si opta por usar un menú desplegable predefinido como el de Spry) ~~ */
+ul.nav {
+	list-style: none; /* esto elimina el marcador de lista */
+	border-top: 1px solid #666; /* esto crea el borde superior de los vínculos (los demás se sitúan usando un borde inferior en el LI) */
+	margin-bottom: 15px; /* esto crea el espacio entre la navegación en el contenido situado debajo */
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* esto crea la separación de los botones */
+}
+ul.nav a, ul.nav a:visited { /* al agrupar estos selectores, se asegurará de que los vínculos mantengan el aspecto de botón incluso después de haber sido visitados */
+	padding: 5px 5px 5px 15px;
+	display: block; /* esto asigna propiedades de bloque al vínculo, lo que provoca que llene todo el LI que lo contiene. Esto provoca que toda el área reaccione a un clic de ratón. */
+	text-decoration: none;
+	background-color: #8090AB;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* esto cambia el color de fondo y del texto tanto para usuarios que naveguen con ratón como para los que lo hagan con teclado */
+	background-color: #6F7D94;
+	color: #FFF;
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+	position: relative;/* esto da a IE6 hasLayout para borrar correctamente */
+	clear: both; /* esta propiedad de borrado fuerza a .container a conocer dónde terminan las columnas y a contenerlas */
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.a {
+	color: #FFCC00;
+}
+.k {
+	color: #FC0;
+}
+.ñ {
+	color: #F90;
+}
+.l {
+	color: #333;
+}
+-->
+</style>
+<link href="SpryAssets/SpryAccordion.css" rel="stylesheet" type="text/css" />
+<!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* este margen negativo de 1 px puede situarse en cualquiera de las columnas de este diseño con el mismo efecto corrector. */
+ul.nav a { zoom: 1; }  /* la propiedad de zoom da a IE el desencadenante hasLayout que necesita para corregir el espacio en blanco extra existente entre los vínculos */
+</style>
+<![endif]--><script src="includes/ice/ice.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryAccordion.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#CCCCCC">
+
+<div class="container">
+  <div class="header"><a href="#" class="header"><a href="#" class="header"></a><a href="#" class="header"><img src="images/logoUNADMobile.png" alt="encab" width="662" height="125" longdesc="images/logoUNADMobile.png" align="middle" /></a><a href="#" class="header"></a></a> 
+    <!-- end .header --></div>
+<div class="sidebar1">
+    <ul class="nav">
+      <li><a href="#">!<span class="ñ">entre todos contruimos un plan</span>¡</a></li>
+
+    </ul>
+    
+
+<p>se está construyendo el Plan Nacional de Educación para los próximos 10 años con la participación de todos los colombianos. Participe en www.plandecenal.edu.co</p>
+    <p>.</p>
+    <!-- end .sidebar1 --></div>
+<div class="content" ice:editable="*">
+    <h2>&nbsp;</h2>
+    <h2>Hola! Estudiantes de <span class="k">UN</span>AD</h2>
+    <div id="Accordion1" class="Accordion" tabindex="0">
+      <div class="AccordionPanel">
+        <div class="AccordionPanelTab">Bienbenidos:</div>
+        <div class="AccordionPanelContent">Este es un un objeto virtual de aprendizaje;<br />
+          Creado por Roger Garibello.<br />
+          <br />
+          <div class="fh5co-section-seperator" id="testimony-animate" style="background-image: url(images/hero-3.jpg);" data-stellar-background-ratio="0.5">
+				<div class="fh5co-overlay"></div>
+				<div class="container">
+					<div class="fh5co-section-content-wrap">
+						<div class="fh5co-section-content">
+							<div class="row">
+								<div class="col-md-9 col-md-offset-1 fh5co-testimony to-animate">
+									<blockquote>
+										<p class="text-center quote">&ldquo;El diseño no es sólo lo que se ve y se siente. El diseño es cómo funciona. <em> La gente no sabe lo que quiere hasta que se lo enseñas.</em>. &rdquo; <cite class="author">&mdash; Steve Jobs</cite></p>
+									</blockquote>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END .container -->
+<br />
+        </div>
+      </div>
+      <div class="AccordionPanel">
+        <div class="AccordionPanelTab">site:</div>
+        <div class="AccordionPanelContent">ingresen a nuestro site oficial: <a href="https://www.unad.edu.co/" target="_blank">unad.edu</a></h2></div>
+      </div>
+    </div>
+    <h1>&nbsp;</h1>
+    <p>&nbsp;</p>
+    </div>
+<div class="row">
+							<div class="col-md-6 to-animate"><br />
+<h2>BIOGRAFIA</h2>
+<p>La Universidad Nacional Abierta y a Distancia, (UNAD) es un Proyecto Educativo que nació con el nombre de Unidad Universitaria del Sur de Bogotá, UNISUR durante el gobierno de Belisario Betancur,</p><br />
+<p>Surgió, mediante la Ley 52 de 1981, como un establecimiento público del orden nacional adscrito al Ministerio de Educación Nacional y transformada por el Congreso de la República mediante la Ley 396 del 5 de agosto de 1997 en la Universidad Nacional Abierta y a Distancia UNAD.</p>
+
+								<p>Se creó con el objeto de diseñar e implementar programas académicos con la estrategia pedagógica de la educación a distancia, que fuesen pertinentes con las necesidades locales, regionales, nacionales e internacionales y acordes con los retos y las demandas de una sociedad democrática, participativa y dinámica afines con modelos científicos, sociales y culturales que contextualizan al siglo XXI. </p>
+	<p>Desde su puesta en marcha – abril de 1982 -, la Universidad se ha caracterizado por su compromiso con las comunidades y poblaciones que no han tenido acceso a una capacitación técnica, socio humanística y comunitaria. También, por su contribución a la recuperación de los tejidos sociales, la generación de espacios laborales y la formación para la participación ciudadana.</p>
+							
+    <h3>Misión</h3>
+    <p class="l">La Universidad Nacional Abierta y a Distancia (UNAD) tiene como misión contribuir a la educación para todos a través de la modalidad abierta, a distancia y en ambientes virtuales de aprendizaje, mediante la acción pedagógica, la proyección social, el desarrollo regional y la proyección comunitaria, la inclusión, la investigación, la internacionalización y las innovaciones metodológicas y didácticas, con la utilización de las tecnologías de la información y las comunicaciones para fomentar y acompañar el aprendizaje autónomo, generador de cultura y espíritu emprendedor que, en el marco de la sociedad global y del conocimiento, propicie el desarrollo económico, social y humano sostenible de las comunidades locales, regionales y globales con calidad, eficiencia y equidad social. </p>
+    <h4>Visión
+</h4>
+    <p>Se proyecta como una organización líder en Educación Abierta y a Distancia, reconocida a nivel nacional e internacional por la calidad innovadora y pertinencia de sus ofertas y servicios educativos y por su compromiso y aporte de su comunidad académica al desarrollo humano sostenible, de las comunidades locales y globales. <!-- end .content --></p>
+  </div>
+  <div class="footer">
+    <div class="fh5co-section-seperator fh5co-section-seperator-white" id="contact-animate" style="background-image: url(images/hero-4.jpg);" data-stellar-background-ratio="0.5">
+				<div class="fh5co-overlay"></div>
+				<div class="container">
+					<div class="fh5co-section-content-wrap">
+						<div class="fh5co-section-content">
+							<div class="row">
+								
+							  <div class="col-md-3">
+									<h2 class="fh5co-section-heading to-animate">Contactanos</h2>
+									
+								  <ul class="fh5co-contact">
+									  <li class="fh5co-contact-address to-animate">
+										  <i class="icon-home"></i>Si usted desea comunicarse con la <br />
+									    Universidad Nacional Abierta y a Distancia, puede hacerlo<br />
+a través de:</li>
+									  <li class="to-animate"><i class="icon-phone"></i>
+									    <p>Teléfono: (+57) 1 375 95 00 en Bogotá, Colombia</p>
+									    <p>Línea gratuita nacional: 01 8000 115223</p>
+									  </li>
+									  <li class="to-animate">atencionalusuario@unad.edu.co</li>
+									  <li class="to-animate"><i class="icon-globe">https://www.unad.edu.co/</i><a href=" target="_blank"></a><br />
+									    <br />
+									  </li>
+								  </ul>
+								</div>
+
+								<div class="col-md-8 col-md-push-1">
+									<div class="row">
+										<div class="col-md-6">
+											<div class="form-group to-animate">
+												<label for="name" class="sr-only">Nombre</label>
+											  <input type="text" id="name" class="form-control" placeholder="Nombre">
+											</div>
+											<div class="form-group to-animate">
+												<label for="email" class="sr-only">Email</label>
+											  <input type="email" id="email" class="form-control" placeholder="correo">
+											</div>
+											<div class="form-group to-animate">
+												<label for="phone" class="sr-only">Telefono</label>
+											  <input type="text" id="phone" class="form-control" placeholder="telefono">
+											</div>
+										</div>
+										<div class="col-md-6">
+										  <div class="form-group to-animate">
+										    <label for="mensaje" class="sr-only">Mensaje</label>
+										    <textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="mensaje"></textarea>
+										    <img src="images/logoUNAD.png" width="162" height="89" alt="b" /></div>
+											<div class="form-group to-animate">
+											  <input type="submit" class="btn btn-primary btn-block" value="enviar">
+											</div>
+										</div>
+
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+			<!-- END .container -->
+
+  <!-- end .footer --></div>
+  <!-- end .container --></div>
+<script type="text/javascript">
+var Accordion1 = new Spry.Widget.Accordion("Accordion1");
+                        </script>
+</body>
+</html>
